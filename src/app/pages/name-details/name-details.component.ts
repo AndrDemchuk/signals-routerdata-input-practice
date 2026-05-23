@@ -9,10 +9,10 @@ import { Component, computed, input } from '@angular/core';
 })
 export default class NameDetailsComponent {
 
-  readonly name = input.required();
+  readonly name = input.required<string>();
 
-  readonly upperCaseName = computed(() => String(this.name()).toUpperCase());
-  readonly NameLength = computed(() => String(this.name()).length);
+  readonly upperCaseName = computed(() => this.name().toUpperCase());
+  readonly NameLength = computed(() => this.name().length);
 
 
   // Create a 'name' signal here, which receives the name parameter from the router
